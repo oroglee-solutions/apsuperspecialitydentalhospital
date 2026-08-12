@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth slider animation */
+#testimonialSlider {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.sel-wrap {
+  position: relative;
+}
+.sel-wrap::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 10px;
+  color: #9ca3af;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.step-arrow {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* cities section  */
+.city-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  pointer-events: none;
+}
+.city-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeSlideIn 0.45s ease forwards;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    width 0.3s;
+}
+.dot.active {
+  width: 20px;
+  background: #fff;
+}
+
+/* Contact Form Styling */
+#contactForm input,
+#contactForm textarea {
+  transition: all 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: #7E0B48 !important;
+  box-shadow: 0 0 0 3px rgba(126, 11, 72, 0.1);
+}
+
+#contactForm button:active {
+  transform: scale(0.98);
+}
+
+/* Doctors Carousel */
+.doctors-carousel {
+  scroll-behavior: smooth;
+}
+
+/* Hero Image - Organic Bottom-Left Sweeping Curve */
+.hero-image-curved {
+  animation: fadeInHero 0.9s ease-out;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-image-curved:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive curve adjustments */
+@media (max-width: 1024px) {
+  .hero-image-curved {
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 70%, 0% 0%) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image-curved {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 65%, 0% 0%) !important;
+  }
+}
+
+/* Hero heading serif font enhancement */
+h1 {
+  letter-spacing: -0.02em;
+}
+
+/* Doctors Carousel Button States */
+#prevDoctors,
+#nextDoctors {
+  transition: all 0.3s ease;
+}
+
+#prevDoctors:hover:not(:disabled),
+#nextDoctors:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(126, 11, 72, 0.3);
+}
+
+#prevDoctors:active:not(:disabled),
+#nextDoctors:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+#prevDoctors:disabled,
+#nextDoctors:disabled {
+  pointer-events: none;
+  opacity: 0.4 !important;
+}
