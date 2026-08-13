@@ -4,6 +4,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep section headings clear of the sticky 80px navbar when jumping via #id */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -143,6 +148,117 @@ select {
   scroll-behavior: smooth;
 }
 
+/* ---------- Responsive helpers ---------- */
+
+/* Hero: the 700px floor only makes sense once the image column appears */
+.hero-section {
+  min-height: auto;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 700px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
+
+/* Doctor photos: shorter frames on small screens */
+.doctor-photo {
+  height: 300px;
+}
+
+@media (min-width: 640px) {
+  .doctor-photo {
+    height: 360px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .doctor-photo {
+    height: 400px;
+  }
+}
+
+/* Map embeds */
+.map-frame {
+  height: 280px;
+}
+
+@media (min-width: 768px) {
+  .map-frame {
+    height: 400px;
+  }
+}
+
+/* Services arrows: overlap the track until the viewport is wide
+   enough to park them outside it without running off screen */
+.services-nav {
+  position: absolute;
+  top: 35%;
+  z-index: 10;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 0.875rem;
+}
+
+.services-nav-prev {
+  left: 0;
+}
+
+.services-nav-next {
+  right: 0;
+}
+
+@media (min-width: 640px) {
+  .services-nav {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .services-nav {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+
+  .services-nav-prev {
+    left: -60px;
+  }
+
+  .services-nav-next {
+    right: -60px;
+  }
+}
+
+/* Footer: warm beige text on the #ad0b5b background */
+footer {
+  color: #f9f0e6;
+}
+
+footer h3,
+footer h4 {
+  color: #fdfaf6;
+}
+
+footer a {
+  color: #f9f0e6;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer .footer-divider {
+  border-color: rgba(249, 240, 230, 0.3);
+}
+
 /* Services Carousel
    Cards keep a fixed size and never shrink; the track slides instead.
    1 card < 640px, 2 cards < 1024px, 5 cards on desktop.
@@ -170,21 +286,15 @@ select {
   transition: all 0.3s ease;
 }
 
-#prevServices:hover:not(:disabled),
-#nextServices:hover:not(:disabled) {
+#prevServices:hover,
+#nextServices:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 16px rgba(173, 11, 91, 0.3);
 }
 
-#prevServices:active:not(:disabled),
-#nextServices:active:not(:disabled) {
+#prevServices:active,
+#nextServices:active {
   transform: scale(0.95);
-}
-
-#prevServices:disabled,
-#nextServices:disabled {
-  pointer-events: none;
-  opacity: 0.4 !important;
 }
 
 /* Hero Image */

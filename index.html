@@ -108,16 +108,15 @@
       <div class="flex items-center justify-between h-20">
         <!-- LOGO -->
         <div class="flex-shrink-0">
-          <img loading="lazy" src="./assets/logo.webp" alt="AP Super Speciality Dental Hospital Logo" class="h-14 w-auto" width="220" height="80">
+          <a href="#" aria-label="Back to top">
+            <img loading="lazy" src="./assets/logo.webp" alt="AP Super Speciality Dental Hospital Logo" class="h-10 sm:h-14 w-auto" width="220" height="80">
+          </a>
         </div>
 
         <!-- DESKTOP NAV -->
         <div class="hidden lg:flex items-center gap-8">
-          <a href="#home" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">Home</a>
-          <a href="#about" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">About Us</a>
-          <a href="#services" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">Our Services</a>
           <a href="#doctors" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">Our Doctors</a>
-          <a href="#gallery" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">Gallery</a>
+          <a href="#services" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">Our Services</a>
           <a href="#contact" class="text-gray-800 hover:text-gray-600 transition font-medium text-sm">Contact Us</a>
           <button class="px-6 py-2.5 rounded-full text-white font-semibold text-sm transition hover:opacity-90" style="background-color: #ad0b5b;">
             Book Appointment
@@ -134,10 +133,9 @@
     <!-- MOBILE MENU -->
     <div id="mobile-menu" class="hidden lg:hidden border-t" style="background-color: #f9f0e6;">
       <div class="px-4 py-6 space-y-3">
-        <a href="#home" class="block px-4 py-2 rounded-lg text-gray-800 hover:text-gray-600">Home</a>
-        <a href="#about" class="block px-4 py-2 rounded-lg text-gray-800 hover:text-gray-600">About Us</a>
-        <a href="#services" class="block px-4 py-2 rounded-lg text-gray-800 hover:text-gray-600">Our Services</a>
         <a href="#doctors" class="block px-4 py-2 rounded-lg text-gray-800 hover:text-gray-600">Our Doctors</a>
+        <a href="#services" class="block px-4 py-2 rounded-lg text-gray-800 hover:text-gray-600">Our Services</a>
+        <a href="#contact" class="block px-4 py-2 rounded-lg text-gray-800 hover:text-gray-600">Contact Us</a>
         <button class="w-full mt-4 px-6 py-3 rounded-full text-white font-semibold" style="background-color: #ad0b5b;">
           Book Appointment
         </button>
@@ -146,7 +144,7 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section id="home" class="relative overflow-hidden" style="background-color: #f9f0e6; padding-top: 60px; padding-bottom: 40px; min-height: 700px;">
+  <section id="home" class="hero-section relative overflow-hidden" style="background-color: #f9f0e6;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center h-full">
 
@@ -155,30 +153,30 @@
 
           <!-- Eyebrow with accent line -->
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-1 rounded-full" style="background-color: #ad0b5b;"></div>
-            <p class="text-xs font-bold tracking-widest uppercase" style="color: #ad0b5b; letter-spacing: 2px;">Your Smile, Our Passion</p>
+            <div class="w-12 h-1.5 rounded-full" style="background-color: #ad0b5b;"></div>
+            <p class="text-sm sm:text-base md:text-lg font-bold tracking-widest uppercase" style="color: #ad0b5b; letter-spacing: 2px;">Your Smile, Our Passion</p>
           </div>
 
           <!-- Main Headline - Large and Bold Serif style -->
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-8" style="color: #1a1a1a; font-family: 'Georgia', serif; font-weight: 900; line-height: 1.1;">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 sm:mb-8" style="color: #1a1a1a; font-family: 'Georgia', serif; font-weight: 900; line-height: 1.1;">
             Complete Dental Care for a Healthier You
           </h1>
 
           <!-- Supporting paragraph -->
-          <p class="text-base md:text-lg text-gray-700 mb-10 leading-relaxed max-w-lg" style="color: #4a4a4a;">
+          <p class="text-sm sm:text-base md:text-lg text-gray-700 mb-8 sm:mb-10 leading-relaxed max-w-lg" style="color: #4a4a4a;">
             At AP Super Speciality Dental Hospital, we combine advanced technology with compassionate care to give you the perfect smile you deserve.
           </p>
 
           <!-- Primary CTA Button -->
-          <div class="mb-12">
-            <button class="px-8 py-3.5 rounded-full text-white font-bold text-base transition hover:opacity-90 hover:scale-105 flex items-center gap-3 shadow-md" style="background-color: #ad0b5b;">
+          <div class="mb-10 sm:mb-12">
+            <button class="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-white font-bold text-base transition hover:opacity-90 hover:scale-105 flex items-center gap-3 shadow-md" style="background-color: #ad0b5b;">
               Book Appointment
               <i class="fas fa-arrow-right text-sm"></i>
             </button>
           </div>
 
           <!-- FEATURE ICONS ROW -->
-          <div class="flex flex-col sm:flex-row gap-8 sm:gap-6 pt-6">
+          <div class="flex flex-col sm:flex-row sm:flex-wrap gap-5 sm:gap-6 pt-2 sm:pt-6">
 
             <div class="flex items-center gap-3">
               <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm" style="background-color: #ffffff; border: 2px solid #f0e8e0;">
@@ -223,22 +221,22 @@
   </section>
 
   <!-- OUR CHIEF DOCTORS SECTION -->
-  <section id="doctors" class="py-16 lg:py-24 px-4 sm:px-6 lg:px-8" style="background-color: #fcf3ec;">
+  <section id="doctors" class="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8" style="background-color: #fcf3ec;">
     <div class="max-w-7xl mx-auto">
 
       <!-- SECTION HEADER -->
-      <div class="mb-16">
+      <div class="mb-10 sm:mb-16">
         <p class="text-sm font-semibold tracking-wider uppercase mb-2" style="color: #ad0b5b;">Our Experts</p>
-        <h2 class="text-4xl md:text-5xl font-bold" style="color: #1a1a1a;">Our Chief Doctors</h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold" style="color: #1a1a1a;">Our Chief Doctors</h2>
       </div>
 
       <!-- EXPERIENCE TITLE & CONTENT - TOP -->
-      <div class="mb-16">
-        <h3 class="text-3xl md:text-4xl font-bold mb-4" style="color: #1a1a1a;">
+      <div class="mb-10 sm:mb-16">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style="color: #1a1a1a;">
           Experience You Can Trust, Care You Deserve
         </h3>
 
-        <p class="text-gray-700 leading-relaxed mb-8 max-w-3xl">
+        <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-8 max-w-3xl">
           Our team of highly skilled and experienced dental professionals is dedicated to providing personalized care using the latest technology in a comfortable and friendly environment.
         </p>
 
@@ -254,11 +252,11 @@
         <!-- DOCTOR 1 -->
         <div class="flex flex-col overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition w-full md:w-1/3" style="background-color: #ffffff;">
           <!-- Image Container -->
-          <div class="w-full overflow-hidden" style="background-color: #e8ddd5; aspect-ratio: 3/4;">
+          <div class="doctor-photo w-full overflow-hidden" style="background-color: #e8ddd5;">
             <img
               src="./assets/Doctor1.png"
               alt="Dr. Rr. Rajendra - Chief Dental Surgeon"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-top"
               width="300"
               height="400"
               loading="lazy"
@@ -268,17 +266,44 @@
           <div class="p-6 text-center" style="background-color: #ffffff;">
             <h3 class="text-xl font-bold" style="color: #1a1a1a;">Dr. Rr. Rajendra</h3>
             <p class="text-gray-600 font-medium mt-1">Chief Dental Surgeon</p>
+            <p class="text-sm text-gray-600 leading-relaxed mt-3">
+              Leads our clinical team across surgical and restorative dentistry, with a special focus on dental implants and full mouth rehabilitation.
+            </p>
           </div>
         </div>
 
         <!-- DOCTOR 2 -->
         <div class="flex flex-col overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition w-full md:w-1/3" style="background-color: #ffffff;">
           <!-- Image Container -->
-          <div class="w-full overflow-hidden" style="background-color: #e8ddd5; aspect-ratio: 3/4;">
+          <div class="doctor-photo w-full overflow-hidden" style="background-color: #e8ddd5;">
             <img
               src="./assets/Doctor2.png"
+              alt="Dr. Vidya - Prosthodontist"
+              class="w-full h-full object-cover object-top"
+              width="300"
+              height="400"
+              loading="lazy"
+            >
+          </div>
+          <!-- Info Container with White Background -->
+          <div class="p-6 text-center" style="background-color: #ffffff;">
+            
+            <h3 class="text-xl font-bold" style="color: #1a1a1a;">Dr. Vidya</h3>
+            <p class="text-gray-600 font-medium mt-1">Prosthodontist</p>
+            <p class="text-sm text-gray-600 leading-relaxed mt-3">
+              Restores function and appearance through crowns, bridges and smile makeovers designed around each patient's natural look.
+            </p>
+          </div>
+        </div>
+
+        <!-- DOCTOR 3 -->
+        <div class="flex flex-col overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition w-full md:w-1/3" style="background-color: #ffffff;">
+          <!-- Image Container -->
+          <div class="doctor-photo w-full overflow-hidden" style="background-color: #e8ddd5;">
+            <img
+              src="./assets/Doctor3.png"
               alt="Dr. Sujatha - Orthodontist"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover object-top"
               width="300"
               height="400"
               loading="lazy"
@@ -288,26 +313,9 @@
           <div class="p-6 text-center" style="background-color: #ffffff;">
             <h3 class="text-xl font-bold" style="color: #1a1a1a;">Dr. Sujatha</h3>
             <p class="text-gray-600 font-medium mt-1">Orthodontist</p>
-          </div>
-        </div>
-
-        <!-- DOCTOR 3 -->
-        <div class="flex flex-col overflow-hidden rounded-3xl shadow-md hover:shadow-lg transition w-full md:w-1/3" style="background-color: #ffffff;">
-          <!-- Image Container -->
-          <div class="w-full overflow-hidden" style="background-color: #e8ddd5; aspect-ratio: 3/4;">
-            <img
-              src="./assets/Doctor3.png"
-              alt="Dr. Vidya - Prosthodontist"
-              class="w-full h-full object-cover"
-              width="300"
-              height="400"
-              loading="lazy"
-            >
-          </div>
-          <!-- Info Container with White Background -->
-          <div class="p-6 text-center" style="background-color: #ffffff;">
-            <h3 class="text-xl font-bold" style="color: #1a1a1a;">Dr. Vidya</h3>
-            <p class="text-gray-600 font-medium mt-1">Prosthodontist</p>
+            <p class="text-sm text-gray-600 leading-relaxed mt-3">
+              Straightens smiles with braces and clear aligners, planning comfortable, well-paced treatment for children and adults alike.
+            </p>
           </div>
         </div>
 
@@ -316,45 +324,42 @@
   </section>
 
   <!-- OUR SERVICES SECTION -->
-  <section id="services" class="py-16 lg:py-24 px-4 sm:px-6 lg:px-8" style="background-color: #faefe5;">
+  <section id="services" class="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8" style="background-color: #faefe5;">
     <div class="max-w-7xl mx-auto">
 
       <!-- SECTION HEADER -->
-      <div class="mb-16">
+      <div class="mb-10 sm:mb-16">
         <p class="text-sm font-semibold tracking-wider uppercase mb-2" style="color: #ad0b5b;">What We Offer</p>
-        <h2 class="text-4xl md:text-5xl font-bold" style="color: #1a1a1a;">Our Services</h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold" style="color: #1a1a1a;">Our Services</h2>
       </div>
 
       <!-- SERVICES CAROUSEL WITH NAVIGATION -->
       <div class="relative">
         <!-- Navigation Arrows -->
-        <button id="prevServices" class="absolute left-0 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl transition hover:opacity-90" style="background-color: #ad0b5b; top: 35%; margin-left: -60px;">
+        <button id="prevServices" aria-label="Previous services" class="services-nav services-nav-prev rounded-full flex items-center justify-center text-white transition hover:opacity-90" style="background-color: #ad0b5b;">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <button id="nextServices" class="absolute right-0 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl transition hover:opacity-90" style="background-color: #ad0b5b; top: 35%; margin-right: -60px;">
+        <button id="nextServices" aria-label="Next services" class="services-nav services-nav-next rounded-full flex items-center justify-center text-white transition hover:opacity-90" style="background-color: #ad0b5b;">
           <i class="fas fa-chevron-right"></i>
         </button>
 
         <!-- Services Carousel Container -->
-        <div class="overflow-hidden px-8 py-4" id="servicesContainer">
+        <div class="overflow-hidden py-4" id="servicesContainer">
           <div class="flex gap-6 transition-transform duration-500" id="servicesSlider">
 
         <!-- SERVICE 1 - Dental Implants -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5;">
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
             <img
-              src="./assets/implants.png"
+              src="./assets/Implants.png"
               alt="Dental Implants - Permanent and natural looking tooth replacement solutions"
-              class="w-full h-full object-cover hover:scale-110 transition duration-300"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
               width="250"
               height="200"
               loading="lazy"
             >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-tooth text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Dental Implants</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Permanent and natural-looking tooth replacement solutions for a strong and healthy smile.
@@ -364,13 +369,17 @@
 
         <!-- SERVICE 2 - Full Mouth Rehabilitation -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-smile text-6xl" style="color: #ad0b5b; opacity: 0.3;"></i>
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
+            <img
+              src="./assets/FullMouthRehabiliation.png"
+              alt="Full Mouth Rehabilitation - Comprehensive dental restoration for optimal function and aesthetics"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
+              width="250"
+              height="200"
+              loading="lazy"
+            >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-smile text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Full Mouth Rehabilitation</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Comprehensive dental restoration for optimal function and aesthetics.
@@ -380,13 +389,17 @@
 
         <!-- SERVICE 3 - Aligners -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-teeth text-6xl" style="color: #ad0b5b; opacity: 0.3;"></i>
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
+            <img
+              src="./assets/Aligners.png"
+              alt="Aligners - Clear and invisible teeth alignment solutions"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
+              width="250"
+              height="200"
+              loading="lazy"
+            >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-teeth text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Aligners</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Clear and invisible teeth alignment solutions for a perfect smile.
@@ -396,20 +409,17 @@
 
         <!-- SERVICE 4 - Braces -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5;">
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
             <img
-              src="./assets/braces.png"
+              src="./assets/Braces.png"
               alt="Braces - Straighten your teeth with advanced braces solutions"
-              class="w-full h-full object-cover hover:scale-110 transition duration-300"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
               width="250"
               height="200"
               loading="lazy"
             >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-teeth text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Braces</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Straighten your teeth and achieve a confident smile with advanced braces solutions.
@@ -419,13 +429,17 @@
 
         <!-- SERVICE 5 - Smile Makeover -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-sparkles text-6xl" style="color: #ad0b5b; opacity: 0.3;"></i>
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
+            <img
+              src="./assets/SmileMakeover.png"
+              alt="Smile Makeover - Comprehensive cosmetic dentistry services"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
+              width="250"
+              height="200"
+              loading="lazy"
+            >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-sparkles text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Smile Makeover</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Transform your smile with our comprehensive cosmetic dentistry services.
@@ -435,20 +449,17 @@
 
         <!-- SERVICE 6 - Crowns & Bridges -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5;">
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
             <img
-              src="./assets/crowns.png"
+              src="./assets/Crowns.png"
               alt="Crowns & Bridges - Restore the strength and appearance of your teeth"
-              class="w-full h-full object-cover hover:scale-110 transition duration-300"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
               width="250"
               height="200"
               loading="lazy"
             >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-crown text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Crowns & Bridges</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Restore the strength and appearance of your teeth with high-quality restorations.
@@ -458,20 +469,17 @@
 
         <!-- SERVICE 7 - Root Canal Treatment -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5;">
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
             <img
-              src="./assets/rct.png"
+              src="./assets/RCT.png"
               alt="Root Canal Treatment - Relieve pain and save your tooth"
-              class="w-full h-full object-cover hover:scale-110 transition duration-300"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
               width="250"
               height="200"
               loading="lazy"
             >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-tooth-filled text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Root Canal Treatment</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Relieve pain and save your natural tooth with our advanced endodontic care.
@@ -481,13 +489,17 @@
 
         <!-- SERVICE 8 - Wisdom Tooth Removal -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-tooth text-6xl" style="color: #ad0b5b; opacity: 0.3;"></i>
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
+            <img
+              src="./assets/WisdomTeethRemoval.png"
+              alt="Wisdom Tooth Removal - Safe and painless extraction with expert surgical care"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
+              width="250"
+              height="200"
+              loading="lazy"
+            >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-tooth text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Wisdom Tooth Removal</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Safe and painless extraction of wisdom teeth with expert surgical care.
@@ -497,20 +509,17 @@
 
         <!-- SERVICE 9 - Kids Dentistry -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5;">
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
             <img
               src="./assets/KidsDentistry.jpeg"
               alt="Kids Dentistry - Specialized dental care for children"
-              class="w-full h-full object-cover hover:scale-110 transition duration-300"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
               width="250"
               height="200"
               loading="lazy"
             >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-child text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Kids Dentistry</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Specialized dental care for children in a friendly and comfortable environment.
@@ -520,13 +529,17 @@
 
         <!-- SERVICE 10 - Teeth Whitening -->
         <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
-          <div class="w-full h-48 overflow-hidden" style="background-color: #e8ddd5; display: flex; align-items: center; justify-content: center;">
-            <i class="fas fa-star text-6xl" style="color: #ad0b5b; opacity: 0.3;"></i>
+          <div class="w-full h-44 overflow-hidden flex items-center justify-center p-2" style="background-color: #e8ddd5;">
+            <img
+              src="./assets/TeethWhitening.png"
+              alt="Teeth Whitening - Professional teeth whitening treatments"
+              class="max-w-full max-h-full object-contain rounded-xl hover:scale-105 transition duration-300"
+              width="250"
+              height="200"
+              loading="lazy"
+            >
           </div>
           <div class="p-6">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: #f0e8e0;">
-              <i class="fas fa-star text-xl" style="color: #ad0b5b;"></i>
-            </div>
             <h3 class="text-lg font-bold mb-2" style="color: #1a1a1a;">Teeth Whitening</h3>
             <p class="text-sm text-gray-600 leading-relaxed">
               Brighten your smile with our professional teeth whitening treatments.
@@ -540,7 +553,7 @@
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8" style="background-color: #f9f0e6;">
+  <section id="contact" class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-8" style="background-color: #fcf3ec;">
     <div class="max-w-7xl mx-auto">
 
       <!-- Top Section with Flex Layout -->
@@ -548,7 +561,8 @@
 
         <!-- Left - Contact Info -->
         <div class="flex-1">
-          <h2 class="text-4xl md:text-5xl font-bold mb-8" style="color: #1a1a1a;">
+          <p class="text-sm font-semibold tracking-wider uppercase mb-2" style="color: #ad0b5b;">Get In Touch</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8" style="color: #1a1a1a;">
             We'd Love to Hear From You!
           </h2>
 
@@ -561,8 +575,17 @@
                 <i class="fas fa-map-marker-alt text-2xl mt-1" style="color: #ad0b5b;"></i>
               </div>
               <div>
-                <h3 class="font-semibold text-gray-900 mb-1">Address</h3>
-                <p class="text-gray-600">123 Smile Avenue, Jubilee Hills,<br>Hyderabad, Telangana - 500033</p>
+                <h3 class="font-semibold text-gray-900 mb-3">Address</h3>
+
+                <div class="mb-4">
+                  <p class="font-semibold text-gray-800 mb-1">Jubilee Hills Branch</p>
+                  <p class="text-sm sm:text-base text-gray-600">Plot No. 265J, Road No. 10, Jubilee Hills,<br>Hyderabad, Telangana - 500033</p>
+                </div>
+
+                <div>
+                  <p class="font-semibold text-gray-800 mb-1">Nanakramguda Branch</p>
+                  <p class="text-sm sm:text-base text-gray-600">Flat No. 301, 3rd Floor, Apollo Hospital Exit Gate,<br>Nanakramguda, Makthakousarali,<br>Hyderabad, Telangana - 500032</p>
+                </div>
               </div>
             </div>
 
@@ -604,7 +627,7 @@
 
         <!-- Right - Contact Form in White Container -->
         <div class="w-full md:w-auto md:max-w-lg">
-          <div class="rounded-2xl shadow-lg p-8" style="background-color: #ede4d7;">
+          <div class="rounded-2xl shadow-lg p-5 sm:p-8" style="background-color: #fdfaf6;">
             <form class="space-y-4" id="contactForm">
               <input
                 type="text"
@@ -656,9 +679,9 @@
 
       <!-- Bottom Section - Dual Maps -->
       <div class="w-full">
-        <div class="flex flex-row gap-6">
+        <div class="flex flex-col md:flex-row gap-6">
           <!-- Map 1 -->
-          <div class="flex-1 rounded-2xl overflow-hidden shadow-lg" style="height: 400px;">
+          <div class="map-frame flex-1 rounded-2xl overflow-hidden shadow-lg">
             <iframe
               width="100%"
               height="100%"
@@ -672,7 +695,7 @@
           </div>
 
           <!-- Map 2 -->
-          <div class="flex-1 rounded-2xl overflow-hidden shadow-lg" style="height: 400px;">
+          <div class="map-frame flex-1 rounded-2xl overflow-hidden shadow-lg">
             <iframe
               width="100%"
               height="100%"
@@ -693,56 +716,66 @@
   <!-- FOOTER -->
   <footer class="py-12 px-4 sm:px-6 lg:px-8 text-white" style="background-color: #ad0b5b;">
     <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-4 gap-8 mb-12">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12">
 
         <!-- BRAND -->
         <div>
-          <h3 class="text-xl font-bold text-white mb-4">AP Super Speciality Dental</h3>
-          <p class="text-gray-300 text-sm">Providing quality dental care with expertise, technology, and compassion.</p>
+          <a href="#" aria-label="Back to top" class="inline-block mb-4">
+            <img loading="lazy" src="./assets/logo.webp" alt="AP Super Speciality Dental Hospital Logo" class="h-10 sm:h-14 w-auto" width="220" height="80">
+          </a>
+          <h3 class="text-xl font-bold mb-4"><a href="#" class="hover:opacity-80 transition">AP Super Speciality Dental</a></h3>
+          <p class="text-sm">Providing quality dental care with expertise, technology, and compassion.</p>
         </div>
 
         <!-- QUICK LINKS -->
         <div>
-          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><a href="#home" class="hover:text-white transition">Home</a></li>
-            <li><a href="#doctors" class="hover:text-white transition">Our Doctors</a></li>
-            <li><a href="#services" class="hover:text-white transition">Services</a></li>
-            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="transition">Home</a></li>
+            <li><a href="#doctors" class="transition">Our Doctors</a></li>
+            <li><a href="#services" class="transition">Our Services</a></li>
+            <li><a href="#contact" class="transition">Contact Us</a></li>
           </ul>
         </div>
 
         <!-- SERVICES -->
-        <div>
-          <h4 class="font-semibold text-white mb-4">Services</h4>
-          <ul class="space-y-2 text-gray-300 text-sm">
-            <li><a href="#" class="hover:text-white transition">Dental Implants</a></li>
-            <li><a href="#" class="hover:text-white transition">Orthodontics</a></li>
-            <li><a href="#" class="hover:text-white transition">Kids Dentistry</a></li>
-            <li><a href="#" class="hover:text-white transition">Root Canal</a></li>
+        <div class="lg:-ml-12">
+          <h4 class="font-semibold mb-4">Services</h4>
+          <ul class="text-sm lg:columns-2 lg:gap-x-8">
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Dental Implants</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Full Mouth Rehabilitation</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Aligners</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Braces</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Smile Makeover</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Crowns &amp; Bridges</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Root Canal Treatment</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Wisdom Tooth Removal</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Kids Dentistry</a></li>
+            <li class="mb-2 break-inside-avoid"><a href="#services" class="transition">Teeth Whitening</a></li>
           </ul>
         </div>
 
         <!-- CONTACT -->
         <div>
-          <h4 class="font-semibold text-white mb-4">Contact</h4>
-          <p class="text-gray-300 text-sm mb-2">
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <p class="text-sm mb-2">
             <i class="fas fa-phone mr-2"></i>+91 40 6666 1111
           </p>
-          <p class="text-gray-300 text-sm mb-4">
+          <p class="text-sm mb-4">
             <i class="fas fa-envelope mr-2"></i>info@apdentalcare.com
           </p>
           <div class="flex gap-4">
-            <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-gray-300 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="transition"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
 
       </div>
 
-      <div class="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-        <p>&copy; 2024 AP Super Speciality Dental Hospital. All rights reserved.</p>
+      <div class="footer-divider border-t pt-8 text-center text-sm">
+        <p>&copy; 2026 AP Super Speciality Dental Hospital. All rights reserved.</p>
+        <p class="mt-2">Designed and maintained by <a href="https://oroglee.com" target="_blank" rel="noopener noreferrer" class="transition underline">OroGlee</a></p>
       </div>
     </div>
   </footer>
@@ -757,245 +790,7 @@
     <i class="fas fa-phone text-xl"></i>
   </a>
 
-  <script defer>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-
-    // Doctors Carousel with Bounds Checking
-    const doctorsSlider = document.getElementById('doctorsSlider');
-    const prevBtn = document.getElementById('prevDoctors');
-    const nextBtn = document.getElementById('nextDoctors');
-
-    if (doctorsSlider && prevBtn && nextBtn) {
-      // Get the number of doctor cards
-      const doctorCards = doctorsSlider.querySelectorAll('[class*="min-w-full"]').length;
-      let currentPosition = 0;
-
-      // Calculate scroll amount and max position based on card width
-      const getScrollConfig = () => {
-        const isMobile = window.innerWidth < 768;
-        const isTablet = window.innerWidth < 1024;
-
-        if (isMobile) {
-          // Mobile: show 1 card, scroll full width
-          return {
-            scrollAmount: doctorsSlider.offsetWidth,
-            maxPosition: doctorCards - 1
-          };
-        } else if (isTablet) {
-          // Tablet: show 2 cards, scroll to show next card
-          return {
-            scrollAmount: doctorsSlider.offsetWidth / 2,
-            maxPosition: doctorCards - 2
-          };
-        } else {
-          // Desktop: show 2 cards, scroll to show next card
-          return {
-            scrollAmount: doctorsSlider.offsetWidth / 2,
-            maxPosition: doctorCards - 2
-          };
-        }
-      };
-
-      let scrollConfig = getScrollConfig();
-      let maxPosition = scrollConfig.maxPosition;
-
-      const getScrollAmount = () => {
-        return getScrollConfig().scrollAmount;
-      };
-
-      // Update arrow button states
-      const updateArrowStates = () => {
-        // Disable prev button at position 0
-        if (currentPosition <= 0) {
-          prevBtn.disabled = true;
-          prevBtn.style.opacity = '0.4';
-          prevBtn.style.cursor = 'not-allowed';
-        } else {
-          prevBtn.disabled = false;
-          prevBtn.style.opacity = '1';
-          prevBtn.style.cursor = 'pointer';
-        }
-
-        // Disable next button at max position
-        if (currentPosition >= maxPosition) {
-          nextBtn.disabled = true;
-          nextBtn.style.opacity = '0.4';
-          nextBtn.style.cursor = 'not-allowed';
-        } else {
-          nextBtn.disabled = false;
-          nextBtn.style.opacity = '1';
-          nextBtn.style.cursor = 'pointer';
-        }
-      };
-
-      // Initialize arrow states
-      updateArrowStates();
-
-      // Previous button click handler
-      prevBtn.addEventListener('click', () => {
-        if (currentPosition > 0) {
-          currentPosition--;
-          const scrollAmount = getScrollAmount();
-          const newPosition = -(currentPosition * scrollAmount);
-          doctorsSlider.style.transform = `translateX(${newPosition}px)`;
-          doctorsSlider.style.transition = 'transform 0.4s ease-in-out';
-          updateArrowStates();
-        }
-      });
-
-      // Next button click handler
-      nextBtn.addEventListener('click', () => {
-        if (currentPosition < maxPosition) {
-          currentPosition++;
-          const scrollAmount = getScrollAmount();
-          const newPosition = -(currentPosition * scrollAmount);
-          doctorsSlider.style.transform = `translateX(${newPosition}px)`;
-          doctorsSlider.style.transition = 'transform 0.4s ease-in-out';
-          updateArrowStates();
-        }
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        scrollConfig = getScrollConfig();
-        maxPosition = scrollConfig.maxPosition;
-
-        // Ensure currentPosition doesn't exceed maxPosition
-        if (currentPosition > maxPosition) {
-          currentPosition = maxPosition;
-        }
-
-        const scrollAmount = getScrollAmount();
-        const newPosition = -(currentPosition * scrollAmount);
-        doctorsSlider.style.transform = `translateX(${newPosition}px)`;
-        updateArrowStates();
-      });
-    }
-
-    // Services Carousel with Transform (Similar to Doctors)
-    const servicesSlider = document.getElementById('servicesSlider');
-    const prevServicesBtn = document.getElementById('prevServices');
-    const nextServicesBtn = document.getElementById('nextServices');
-
-    if (servicesSlider && prevServicesBtn && nextServicesBtn) {
-      const totalServices = servicesSlider.children.length;
-      let currentPosition = 0;
-
-      const GAP = 24; // gap-6
-
-      // Calculate carousel config based on screen size.
-      // Step = one card width + gap, measured from the real card so the
-      // track always lands exactly on a card boundary.
-      const getCarouselConfig = () => {
-        const isMobile = window.innerWidth < 640;
-        const isTablet = window.innerWidth < 1024;
-        const visibleCards = isMobile ? 1 : (isTablet ? 2 : 5);
-        const cardWidth = servicesSlider.children[0].offsetWidth;
-
-        return {
-          scrollAmount: cardWidth + GAP,
-          maxPosition: Math.max(0, totalServices - visibleCards),
-          visibleCards: visibleCards
-        };
-      };
-
-      let carouselConfig = getCarouselConfig();
-      let maxPosition = carouselConfig.maxPosition;
-
-      const getScrollAmount = () => {
-        return getCarouselConfig().scrollAmount;
-      };
-
-      // Update carousel position
-      const updateCarouselPosition = () => {
-        const scrollAmount = getScrollAmount();
-        const newPosition = -(currentPosition * scrollAmount);
-        servicesSlider.style.transform = `translateX(${newPosition}px)`;
-      };
-
-      // Update arrow button states
-      const updateArrowStates = () => {
-        // Disable prev button at position 0
-        if (currentPosition <= 0) {
-          prevServicesBtn.disabled = true;
-          prevServicesBtn.style.opacity = '0.4';
-          prevServicesBtn.style.cursor = 'not-allowed';
-        } else {
-          prevServicesBtn.disabled = false;
-          prevServicesBtn.style.opacity = '1';
-          prevServicesBtn.style.cursor = 'pointer';
-        }
-
-        // Disable next button at max position
-        if (currentPosition >= maxPosition) {
-          nextServicesBtn.disabled = true;
-          nextServicesBtn.style.opacity = '0.4';
-          nextServicesBtn.style.cursor = 'not-allowed';
-        } else {
-          nextServicesBtn.disabled = false;
-          nextServicesBtn.style.opacity = '1';
-          nextServicesBtn.style.cursor = 'pointer';
-        }
-      };
-
-      // Initialize
-      updateArrowStates();
-      updateCarouselPosition();
-
-      // Previous button click handler
-      prevServicesBtn.addEventListener('click', () => {
-        if (currentPosition > 0) {
-          currentPosition--;
-          updateCarouselPosition();
-          updateArrowStates();
-        }
-      });
-
-      // Next button click handler
-      nextServicesBtn.addEventListener('click', () => {
-        if (currentPosition < maxPosition) {
-          currentPosition++;
-          updateCarouselPosition();
-          updateArrowStates();
-        }
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        carouselConfig = getCarouselConfig();
-        maxPosition = carouselConfig.maxPosition;
-
-        // Reset position if it exceeds max
-        if (currentPosition > maxPosition) {
-          currentPosition = maxPosition;
-        }
-
-        updateCarouselPosition();
-        updateArrowStates();
-      });
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
+  <script src="./script.js" defer></script>
 
 </body>
 </html>
