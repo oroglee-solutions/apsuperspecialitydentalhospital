@@ -143,38 +143,65 @@ select {
   scroll-behavior: smooth;
 }
 
-/* Hero Image - Organic Bottom-Left Sweeping Curve */
-.hero-image-curved {
-  animation: fadeInHero 0.9s ease-out;
-  transition: transform 0.3s ease, filter 0.3s ease;
+/* Services Carousel
+   Cards keep a fixed size and never shrink; the track slides instead.
+   1 card < 640px, 2 cards < 1024px, 5 cards on desktop.
+   Desktop width accounts for the 4 gaps of 24px: (100% - 96px) / 5 */
+.service-card {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-image-curved:hover {
-  transform: scale(1.02);
-  filter: brightness(1.05);
+@media (min-width: 640px) {
+  .service-card {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-card {
+    flex: 0 0 calc((100% - 96px) / 5);
+  }
+}
+
+#prevServices,
+#nextServices {
+  transition: all 0.3s ease;
+}
+
+#prevServices:hover:not(:disabled),
+#nextServices:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(173, 11, 91, 0.3);
+}
+
+#prevServices:active:not(:disabled),
+#nextServices:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+#prevServices:disabled,
+#nextServices:disabled {
+  pointer-events: none;
+  opacity: 0.4 !important;
+}
+
+/* Hero Image */
+.hero-image {
+  animation: fadeInHero 0.8s ease-out;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes fadeInHero {
   from {
     opacity: 0;
-    transform: translateX(60px);
+    transform: translateX(40px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Responsive curve adjustments */
-@media (max-width: 1024px) {
-  .hero-image-curved {
-    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 70%, 0% 0%) !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-image-curved {
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 65%, 0% 0%) !important;
+    transform: translateX(0) scale(1);
   }
 }
 
