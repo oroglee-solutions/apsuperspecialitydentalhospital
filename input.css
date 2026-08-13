@@ -153,8 +153,15 @@ select {
 /* Hero: the 700px floor only makes sense once the image column appears */
 .hero-section {
   min-height: auto;
-  padding-top: 40px;
-  padding-bottom: 48px;
+  padding-top: 28px;
+  padding-bottom: 36px;
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -182,12 +189,18 @@ select {
   }
 }
 
-/* Map embeds */
+/* Map embeds — full width and stacked until lg, side by side after */
 .map-frame {
   height: 280px;
 }
 
 @media (min-width: 768px) {
+  .map-frame {
+    height: 340px;
+  }
+}
+
+@media (min-width: 1024px) {
   .map-frame {
     height: 400px;
   }
@@ -257,6 +270,27 @@ footer a:hover {
 
 footer .footer-divider {
   border-color: rgba(249, 240, 230, 0.3);
+}
+
+/* Service card image frame.
+   The card gets much wider than 208px once fewer of them are on screen
+   (2 up on tablet, 1 up on mobile), so the frame grows taller to keep
+   roughly the 4:3 shape of the artwork — otherwise a contained image
+   only fills the middle band and leaves beige down both sides. */
+.service-photo-frame {
+  height: 15rem;
+}
+
+@media (min-width: 640px) {
+  .service-photo-frame {
+    height: 16rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-photo-frame {
+    height: 11rem;
+  }
 }
 
 /* Services Carousel
