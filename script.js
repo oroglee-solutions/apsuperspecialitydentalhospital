@@ -11,71 +11,72 @@ if (mobileMenuBtn && mobileMenu) {
   });
 }
 
-// Services Carousel
+// Services: show the first three, reveal the rest on demand
 
-const servicesSlider = document.getElementById("servicesSlider");
-const prevServicesBtn = document.getElementById("prevServices");
-const nextServicesBtn = document.getElementById("nextServices");
+const toggleServicesBtn = document.getElementById("toggleServices");
+const toggleServicesLabel = document.getElementById("toggleServicesLabel");
 
-if (servicesSlider && prevServicesBtn && nextServicesBtn) {
-  const totalServices = servicesSlider.children.length;
-  const GAP = 24; // gap-6
+if (toggleServicesBtn && toggleServicesLabel) {
+  const extraCards = Array.from(document.querySelectorAll(".service-extra"));
+  const STAGGER = 60; // ms between neighbouring cards
+  const DURATION = 500; // must match the CSS transition
+  let animating = false;
 
-  let currentPosition = 0;
+  const expand = () => {
+    // take the cards out of display:none first, then let the browser paint
+    // one frame at opacity 0 so the transition has a starting point
+    extraCards.forEach((card) => card.classList.remove("hidden"));
 
-  // Step = one card width + gap, measured from the real card so the
-  // track always lands exactly on a card boundary.
-  const getCarouselConfig = () => {
-    const isMobile = window.innerWidth < 640;
-    const isTablet = window.innerWidth < 1024;
-    const visibleCards = isMobile ? 1 : isTablet ? 2 : 5;
-    const cardWidth = servicesSlider.children[0].offsetWidth;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        extraCards.forEach((card, i) => {
+          card.style.transitionDelay = i * STAGGER + "ms";
+          card.classList.add("is-visible");
+        });
+      });
+    });
 
-    return {
-      scrollAmount: cardWidth + GAP,
-      maxPosition: Math.max(0, totalServices - visibleCards),
-      visibleCards: visibleCards,
-    };
+    const total = DURATION + STAGGER * (extraCards.length - 1);
+    setTimeout(() => {
+      extraCards.forEach((card) => (card.style.transitionDelay = ""));
+      animating = false;
+    }, total);
   };
 
-  let carouselConfig = getCarouselConfig();
-  let maxPosition = carouselConfig.maxPosition;
+  const collapse = () => {
+    // fade out in reverse so the list closes from the bottom up
+    extraCards.forEach((card, i) => {
+      card.style.transitionDelay = (extraCards.length - 1 - i) * STAGGER + "ms";
+      card.classList.remove("is-visible");
+    });
 
-  const getScrollAmount = () => getCarouselConfig().scrollAmount;
+    const total = DURATION + STAGGER * (extraCards.length - 1);
+    setTimeout(() => {
+      extraCards.forEach((card) => {
+        card.classList.add("hidden");
+        card.style.transitionDelay = "";
+      });
+      animating = false;
+    }, total);
 
-  const updateCarouselPosition = () => {
-    const newPosition = -(currentPosition * getScrollAmount());
-
-    servicesSlider.style.transform = `translateX(${newPosition}px)`;
+    // ease back up to the section instead of letting the page jump
+    document.getElementById("services").scrollIntoView({ behavior: "smooth" });
   };
 
-  // Both arrows stay active — the track loops around at either end
-  prevServicesBtn.style.cursor = "pointer";
-  nextServicesBtn.style.cursor = "pointer";
+  toggleServicesBtn.addEventListener("click", () => {
+    if (animating) return;
+    animating = true;
 
-  updateCarouselPosition();
+    const expanded = toggleServicesBtn.getAttribute("aria-expanded") === "true";
 
-  // At the first card, going back wraps to the last group
-  prevServicesBtn.addEventListener("click", () => {
-    currentPosition = currentPosition <= 0 ? maxPosition : currentPosition - 1;
-    updateCarouselPosition();
-  });
+    toggleServicesBtn.setAttribute("aria-expanded", String(!expanded));
+    toggleServicesLabel.textContent = expanded ? "Show More" : "Show Less";
 
-  // At the last card, going forward wraps to the first group
-  nextServicesBtn.addEventListener("click", () => {
-    currentPosition = currentPosition >= maxPosition ? 0 : currentPosition + 1;
-    updateCarouselPosition();
-  });
-
-  window.addEventListener("resize", () => {
-    carouselConfig = getCarouselConfig();
-    maxPosition = carouselConfig.maxPosition;
-
-    if (currentPosition > maxPosition) {
-      currentPosition = maxPosition;
+    if (expanded) {
+      collapse();
+    } else {
+      expand();
     }
-
-    updateCarouselPosition();
   });
 }
 

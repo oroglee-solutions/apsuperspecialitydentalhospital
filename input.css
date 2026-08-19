@@ -206,49 +206,6 @@ select {
   }
 }
 
-/* Services arrows: overlap the track until the viewport is wide
-   enough to park them outside it without running off screen */
-.services-nav {
-  position: absolute;
-  top: 35%;
-  z-index: 10;
-  width: 2.25rem;
-  height: 2.25rem;
-  font-size: 0.875rem;
-}
-
-.services-nav-prev {
-  left: 0;
-}
-
-.services-nav-next {
-  right: 0;
-}
-
-@media (min-width: 640px) {
-  .services-nav {
-    width: 2.75rem;
-    height: 2.75rem;
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .services-nav {
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.25rem;
-  }
-
-  .services-nav-prev {
-    left: -60px;
-  }
-
-  .services-nav-next {
-    right: -60px;
-  }
-}
-
 /* Footer: warm beige text on the #ad0b5b background */
 footer {
   color: #f9f0e6;
@@ -272,63 +229,58 @@ footer .footer-divider {
   border-color: rgba(249, 240, 230, 0.3);
 }
 
-/* Service card image frame.
-   The card gets much wider than 208px once fewer of them are on screen
-   (2 up on tablet, 1 up on mobile), so the frame grows taller to keep
-   roughly the 4:3 shape of the artwork — otherwise a contained image
-   only fills the middle band and leaves beige down both sides. */
+/* Service card image frame — matches the 4:3 artwork at every card width */
 .service-photo-frame {
-  height: 15rem;
+  aspect-ratio: 4 / 3;
 }
 
-@media (min-width: 640px) {
-  .service-photo-frame {
-    height: 16rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .service-photo-frame {
-    height: 11rem;
-  }
-}
-
-/* Services Carousel
-   Cards keep a fixed size and never shrink; the track slides instead.
-   1 card < 640px, 2 cards < 1024px, 5 cards on desktop.
-   Desktop width accounts for the 4 gaps of 24px: (100% - 96px) / 5 */
+/* Service cards are grid items; the grid sets the width */
 .service-card {
-  flex: 0 0 100%;
   display: flex;
   flex-direction: column;
 }
 
-@media (min-width: 640px) {
-  .service-card {
-    flex: 0 0 calc(50% - 12px);
+/* This rule is unlayered, so it outranks Tailwind's .hidden — the hidden
+   extras need it spelled out or they stay visible. */
+.service-card.hidden {
+  display: none;
+}
+
+/* The extra cards fade and slide rather than snapping in and out.
+   display:none can't be transitioned, so JS drops .hidden first and
+   flips .is-visible on the next frame (and reverses that on collapse). */
+.service-extra {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.service-extra.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-extra {
+    transition: none;
+    transform: none;
   }
 }
 
-@media (min-width: 1024px) {
-  .service-card {
-    flex: 0 0 calc((100% - 96px) / 5);
-  }
+/* Show more / show less */
+#toggleServices:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(173, 11, 91, 0.25);
 }
 
-#prevServices,
-#nextServices {
+#toggleServices {
   transition: all 0.3s ease;
 }
 
-#prevServices:hover,
-#nextServices:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(173, 11, 91, 0.3);
-}
-
-#prevServices:active,
-#nextServices:active {
-  transform: scale(0.95);
+#toggleServices[aria-expanded="true"] #toggleServicesIcon {
+  transform: rotate(180deg);
 }
 
 /* Hero Image */
