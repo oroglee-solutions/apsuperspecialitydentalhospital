@@ -234,10 +234,33 @@ footer .footer-divider {
   aspect-ratio: 4 / 3;
 }
 
-/* Service cards are grid items; the grid sets the width */
+/* Flex wrap rather than CSS grid: a grid always packs a short final row to
+   the start, while flex + justify-content:center centres the leftovers. */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 .service-card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 100%;
+}
+
+@media (min-width: 640px) {
+  .service-card {
+    /* 2 per row: 2 cards + 1 gap of 24px */
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-card {
+    /* 4 per row: 4 cards + 3 gaps of 24px */
+    flex: 0 0 calc(25% - 18px);
+  }
 }
 
 /* This rule is unlayered, so it outranks Tailwind's .hidden — the hidden
@@ -266,6 +289,77 @@ footer .footer-divider {
   .service-extra {
     transition: none;
     transform: none;
+  }
+}
+
+/* New branch popup - disabled
+.branch-modal {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+(* unlayered, so spell out the hidden state or it outranks Tailwind's .hidden *)
+.branch-modal.hidden {
+  display: none;
+}
+
+.branch-modal.is-open {
+  opacity: 1;
+}
+
+.branch-modal__card {
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.branch-modal.is-open .branch-modal__card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-modal,
+  .branch-modal__card {
+    transition: none;
+    transform: none;
+  }
+}
+*/
+
+/* Hero new-branch pill */
+.branch-pill:hover {
+  transform: translateX(3px);
+  box-shadow: 0 6px 14px rgba(173, 11, 91, 0.15);
+}
+
+.branch-pill {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-pill:hover {
+    transform: none;
+  }
+}
+
+/* Stat box dividers: translucent white on the magenta panel.
+   The government box wraps to 2x2 below lg, so its dividers follow the grid. */
+.stats-grid > * + * {
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+@media (max-width: 1023px) {
+  .stats-grid.lg\:grid-cols-4 > *:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .stats-grid.lg\:grid-cols-4 > *:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
   }
 }
 
