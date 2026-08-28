@@ -309,7 +309,7 @@ function handleSubmit(event) {
     message,
   };
 
-  fetch("http://localhost:3000/server/openaccess/apdentalcontactus", {
+  fetch("https://oroglee.com/server/openaccess/apdentalcontactus", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
