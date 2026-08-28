@@ -219,3 +219,207 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+
+// Brand palette for the result toast — magenta on beige for success,
+// kept distinct (white / red) for failures so the two never read alike.
+const TOAST_STYLES = {
+  success: { background: "#ad0b5b", border: "#8d0949", text: "#f9f0e6" },
+  error: { background: "#ffffff", border: "#fca5a5", text: "#dc2626" },
+};
+
+function applyToastStyle(toast, variant) {
+  const style = TOAST_STYLES[variant];
+  toast.style.backgroundColor = style.background;
+  toast.style.borderColor = style.border;
+  toast.style.color = style.text;
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const form = document.getElementById("contact-form");
+  const card = document.getElementById("formCard");
+  const spinner = document.getElementById("formSpinner");
+  const toast = document.getElementById("centeredToast");
+  const icon = document.getElementById("centeredToastIcon");
+  const text = document.getElementById("centeredToastText");
+  const charCount = document.getElementById("charCount");
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const mobileNo = document.getElementById("phone").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const phoneerror = document.getElementById("phoneError");
+  const nameerror = document.getElementById("nameError");
+  const emailerror = document.getElementById("emailError");
+  const messageerror = document.getElementById("messageError");
+
+  phoneerror.textContent = "";
+  nameerror.textContent = "";
+  emailerror.textContent = "";
+  messageerror.textContent = "";
+
+  // =========================
+  // VALIDATIONS
+  // =========================
+  if (!name) {
+    nameerror.textContent = "Please enter your name";
+    return;
+  }
+
+  if (name.length > 30) {
+    nameerror.textContent = "Name cannot exceed 30 characters";
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    emailerror.textContent = "Enter a valid email address";
+    return;
+  }
+
+  if (mobileNo.length !== 10 || isNaN(mobileNo)) {
+    phoneerror.textContent = "Enter valid 10 digit phone number";
+    return;
+  }
+
+  if (message.length < 30) {
+    messageerror.textContent = "Minimum 30 characters required";
+    return;
+  }
+
+
+
+  // =========================
+  // SHOW SPINNER
+  // =========================
+  // Lock the card at its current height before the form is removed, so it
+  // doesn't collapse behind the spinner and toast.
+  card.style.minHeight = card.offsetHeight + "px";
+
+  form.classList.add("hidden");
+  spinner.classList.remove("hidden", "opacity-0");
+  spinner.classList.add("flex", "opacity-100");
+
+  const entry = {
+    name,
+    email,
+    mobileNo,
+    message,
+  };
+
+  fetch("http://localhost:3000/server/openaccess/apdentalcontactus", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(entry),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Success", data);
+
+      // =========================
+      // HIDE SPINNER
+      // =========================
+      spinner.classList.add("hidden", "opacity-0");
+      spinner.classList.remove("flex", "opacity-100");
+
+      const success = data.status === 1;
+
+      text.textContent = success
+        ? "We'll get back to you soon!"
+        : data.msg || "Query not submitted!";
+
+      applyToastStyle(toast, success ? "success" : "error");
+
+      if (success) {
+        icon.innerHTML = '<path d="M20 6L9 17l-5-5"></path>';
+
+        event.target.reset();
+
+        // reset counter
+        charCount.textContent = "0";
+        charCount.classList.remove("text-red-500");
+        charCount.classList.add("text-gray-400");
+      } else {
+        icon.innerHTML =
+          '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>';
+      }
+
+      // show toast
+      toast.classList.remove("opacity-0", "pointer-events-none");
+      toast.classList.add("opacity-100", "pointer-events-auto");
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "pointer-events-none");
+        toast.classList.remove("opacity-100", "pointer-events-auto");
+
+        form.classList.remove("hidden");
+        card.style.minHeight = "";
+      }, 3000);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+
+      spinner.classList.add("hidden", "opacity-0");
+      spinner.classList.remove("flex", "opacity-100");
+
+      icon.innerHTML =
+        '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>';
+
+      text.textContent = "Query not submitted!";
+      applyToastStyle(toast, "error");
+
+      toast.classList.remove("opacity-0", "pointer-events-none");
+      toast.classList.add("opacity-100", "pointer-events-auto");
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "pointer-events-none");
+        toast.classList.remove("opacity-100", "pointer-events-auto");
+
+        form.classList.remove("hidden");
+        card.style.minHeight = "";
+      }, 3000);
+    });
+}
+
+// =========================
+// MESSAGE CHARACTER COUNTER
+// =========================
+const messageField = document.getElementById("message");
+const charCount = document.getElementById("charCount");
+
+if (messageField && charCount) {
+  messageField.addEventListener("input", () => {
+    const length = messageField.value.trim().length;
+    charCount.textContent = length;
+
+    charCount.classList.toggle("text-red-500", length < 30);
+    charCount.classList.toggle("text-gray-400", length >= 30);
+  });
+}
+
+// =========================
+// CLEAR ERRORS WHILE TYPING
+// =========================
+[
+  ["name", "nameError"],
+  ["email", "emailError"],
+  ["phone", "phoneError"],
+  ["message", "messageError"],
+].forEach(([fieldId, errorId]) => {
+  const field = document.getElementById(fieldId);
+  const error = document.getElementById(errorId);
+
+  if (field && error) {
+    field.addEventListener("input", () => {
+      error.textContent = "";
+    });
+  }
+});
+
+
+
