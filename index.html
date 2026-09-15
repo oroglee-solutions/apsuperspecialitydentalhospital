@@ -144,36 +144,23 @@
   <!-- HERO SECTION -->
   <section id="home" class="hero-section relative overflow-hidden" style="background-color: #f9f0e6;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center h-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start h-full">
 
-        <!-- LEFT CONTENT -->
-        <div class="flex flex-col justify-center">
-
-          <!-- NEW BRANCH ANNOUNCEMENT -->
-          <a href="#contact" class="branch-pill inline-flex items-center gap-2 self-start rounded-full pl-1.5 pr-4 py-1.5 mb-4 sm:mb-5 shadow-sm transition" style="background-color: #ffffff;">
-            <span class="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white" style="background-color: #ad0b5b;">New</span>
-            <span class="text-xs sm:text-sm font-semibold" style="color: #3a3a3a;">Now open in Nanakramguda</span>
-            <i class="fas fa-arrow-right text-[10px] sm:text-xs" style="color: #ad0b5b;"></i>
-          </a>
-
-          <!-- Eyebrow with accent line -->
-          <div class="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-5 lg:mb-6">
-            <div class="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full" style="background-color: #ad0b5b;"></div>
-            <p class="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-widest uppercase" style="color: #ad0b5b; letter-spacing: 1.5px;">Your Smile, Our Passion</p>
+        <!-- RIGHT CONTENT - HERO IMAGE -->
+        <div class="hidden lg:flex flex-col order-1 lg:order-2 justify-top">
+          <div class="relative w-full rounded-2xl overflow-hidden shadow-lg" style="height: 500px;">
+            <img
+              src="./assets/HeroImg.webp"
+              alt="Modern dental treatment chair with advanced equipment at AP Super Speciality Dental Hospital"
+              class="hero-image w-full h-full object-cover"
+              width="700"
+              height="750"
+              loading="lazy"
+            >
           </div>
 
-          <!-- Main Headline - Large and Bold Serif style -->
-          <h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-tight mb-4 sm:mb-5 lg:mb-8" style="color: #1a1a1a; font-family: 'Georgia', serif; font-weight: 900; line-height: 1.1;">
-            Three Decades of Trusted Dental Excellence
-          </h1>
-
-          <!-- Supporting paragraph -->
-          <p class="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-lg md:max-w-2xl lg:max-w-xl" style="color: #4a4a4a;">
-            <strong class="font-semibold" style="color: #2f2f2f;">Since 1988, A.P. Superspeciality Dental Hospital has been providing comprehensive dental care in Hyderabad.</strong> From general dentistry to advanced specialities &mdash; expertise, innovation, and patient-centred care under one trusted name.
-          </p>
-
           <!-- CREDENTIALS STRIP -->
-          <div class="flex flex-row items-stretch gap-3 sm:gap-5 lg:gap-6 rounded-2xl border px-3 sm:px-5 lg:px-6 py-4 sm:py-5 mb-6 sm:mb-8 w-full max-w-md sm:max-w-xl" style="border-color: #e8ddd5; background-color: rgba(255, 255, 255, 0.55);">
+          <div class="flex flex-row items-stretch gap-3 sm:gap-5 lg:gap-6 rounded-2xl border px-3 sm:px-5 lg:px-6 py-4 sm:py-5 mt-6 sm:mt-8 w-full max-w-md sm:max-w-xl" style="border-color: #e8ddd5; background-color: rgba(255, 255, 255, 0.55);">
 
             <!-- Years of experience -->
             <div class="flex flex-col items-center justify-center text-center gap-2 min-w-0 flex-1">
@@ -207,14 +194,33 @@
             </div>
 
           </div>
+        </div>
 
-          <!-- Primary CTA Button -->
-          <div class="mb-6 sm:mb-8 lg:mb-12">
-            <a href="tel:+919848012111" class="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-white font-bold text-sm sm:text-base transition hover:opacity-90 hover:scale-105 inline-flex items-center gap-3 shadow-md w-fit" style="background-color: #ad0b5b;">
-              Book Appointment
-              <i class="fas fa-phone text-sm"></i>
-            </a>
+        <!-- LEFT CONTENT -->
+        <div class="flex flex-col justify-center order-2 lg:order-1">
+
+          <!-- NEW BRANCH ANNOUNCEMENT -->
+          <a href="#contact" class="branch-pill inline-flex items-center gap-2 self-start rounded-full pl-1.5 pr-4 py-1.5 mb-4 sm:mb-5 shadow-sm transition" style="background-color: #ffffff;">
+            <span class="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white" style="background-color: #ad0b5b;">New</span>
+            <span class="text-xs sm:text-sm font-semibold" style="color: #3a3a3a;">Now open in Nanakramguda</span>
+            <i class="fas fa-arrow-right text-[10px] sm:text-xs" style="color: #ad0b5b;"></i>
+          </a>
+
+          <!-- Eyebrow with accent line -->
+          <div class="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-5 lg:mb-6">
+            <div class="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full" style="background-color: #ad0b5b;"></div>
+            <p class="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-widest uppercase" style="color: #ad0b5b; letter-spacing: 1.5px;">Your Smile, Our Passion</p>
           </div>
+
+          <!-- Main Headline - Large and Bold Serif style -->
+          <h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-tight mb-4 sm:mb-5 lg:mb-8" style="color: #1a1a1a; font-family: 'Georgia', serif; font-weight: 900; line-height: 1.1;">
+            Three Decades of Trusted Dental Excellence
+          </h1>
+
+          <!-- Supporting paragraph -->
+          <p class="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 lg:mb-10 leading-relaxed max-w-lg md:max-w-2xl lg:max-w-xl" style="color: #4a4a4a;">
+            <strong class="font-semibold" style="color: #2f2f2f;">Since 1988, A.P. Superspeciality Dental Hospital has been providing comprehensive dental care in Hyderabad.</strong> From general dentistry to advanced specialities &mdash; expertise, innovation, and patient-centred care under one trusted name.
+          </p>
 
           <!-- LOCATION CHIPS -->
           <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
@@ -227,6 +233,52 @@
               <span class="rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white" style="background-color: #ad0b5b;">New</span>
             </a>
           </div>
+
+          <!-- CREDENTIALS STRIP -->
+          <!-- <div class="flex flex-row items-stretch gap-3 sm:gap-5 lg:gap-6 rounded-2xl border px-3 sm:px-5 lg:px-6 py-4 sm:py-5 mb-6 sm:mb-8 w-full max-w-md sm:max-w-xl" style="border-color: #e8ddd5; background-color: rgba(255, 255, 255, 0.55);">
+
+            <!-- Years of experience 
+            <div class="flex flex-col items-center justify-center text-center gap-2 min-w-0 flex-1">
+              <img
+                src="./assets/Experience.webp"
+                alt="Years of dental experience"
+                class="h-12 sm:h-20 lg:h-20 xl:h-24 w-auto flex-shrink-0"
+                width="400"
+                height="343"
+              >
+              <p class="font-semibold text-[11px] sm:text-sm xl:text-base leading-tight" style="color: #1a1a1a;">
+                Years of Experience
+              </p>
+            </div>
+
+            <!-- divider 
+            <div class="w-px self-stretch flex-shrink-0" style="background-color: #e8ddd5;"></div>
+
+            <!-- NABH accreditation 
+            <div class="flex flex-col items-center justify-center text-center gap-2 min-w-0 flex-1">
+              <img
+                src="./assets/NABH.webp"
+                alt="NABH Accredited"
+                class="h-12 sm:h-20 lg:h-20 xl:h-24 w-auto flex-shrink-0"
+                width="320"
+                height="319"
+              >
+              <p class="font-semibold text-[11px] sm:text-sm xl:text-base leading-tight" style="color: #1a1a1a;">
+                Accredited
+              </p>
+            </div>
+
+          </div> -->
+
+          <!-- Primary CTA Button -->
+          <div class="mb-6 sm:mb-8 lg:mb-12">
+            <a href="tel:+919848012111" class="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-white font-bold text-sm sm:text-base transition hover:opacity-90 hover:scale-105 inline-flex items-center gap-3 shadow-md w-fit" style="background-color: #ad0b5b;">
+              <i class="fas fa-phone text-sm"></i>Book Appointment
+              
+            </a>
+          </div>
+
+          
 
           <!-- FEATURE ICONS ROW -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 pt-0 sm:pt-4 lg:pt-6">
@@ -252,20 +304,6 @@
               <p class="font-semibold text-xs sm:text-sm" style="color: #3a3a3a;">Safe & Painless Treatments</p>
             </div>
 
-          </div>
-        </div>
-
-        <!-- RIGHT CONTENT - HERO IMAGE -->
-        <div class="hidden lg:flex items-center justify-center">
-          <div class="relative w-full rounded-2xl overflow-hidden shadow-lg" style="height: 500px;">
-            <img
-              src="./assets/HeroImg.webp"
-              alt="Modern dental treatment chair with advanced equipment at AP Super Speciality Dental Hospital"
-              class="hero-image w-full h-full object-cover"
-              width="700"
-              height="750"
-              loading="lazy"
-            >
           </div>
         </div>
 
@@ -539,7 +577,7 @@
       </div>
 
       <!-- COMMITMENT -->
-      <div class="mt-10 rounded-2xl px-6 py-8 text-center" style="background-color: #fcf3ec;">
+      <div class="mt-10 rounded-2xl px-6 py-8 text-center" style="background-color: #ffffff;">
         <h3 class="text-xl font-bold mb-3" style="color: #1a1a1a;">Our Commitment</h3>
         <p class="text-sm sm:text-base font-semibold leading-relaxed max-w-3xl mx-auto" style="color: #4a4a4a;">
           Through our participation in government healthcare programmes, we remain committed to making specialised dental care more accessible while maintaining the highest standards of clinical expertise, quality, and patient care.
@@ -626,7 +664,7 @@
       <div class="service-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
         <div class="service-photo-frame w-full overflow-hidden" style="background-color: #e8ddd5;">
           <img
-            src="./assets/RCTLg.webp"
+            src="./assets/RCT.webp"
             alt="Root Canal Treatment - Relieve pain and save your tooth"
             class="w-full h-full object-cover hover:scale-105 transition duration-300"
             width="250"
@@ -666,7 +704,7 @@
       <div class="service-card service-extra hidden rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
         <div class="service-photo-frame w-full overflow-hidden" style="background-color: #e8ddd5;">
           <img
-            src="./assets/SmileMakeoverLg.webp"
+            src="./assets/Smile-makeover.webp"
             alt="Smile Makeover - Comprehensive cosmetic dentistry services"
             class="w-full h-full object-cover hover:scale-105 transition duration-300"
             width="250"
@@ -686,7 +724,7 @@
       <div class="service-card service-extra hidden rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
         <div class="service-photo-frame w-full overflow-hidden" style="background-color: #e8ddd5;">
           <img
-            src="./assets/CrownsLg.webp"
+            src="./assets/CrownAndBridges.webp"
             alt="Crowns & Bridges - Restore the strength and appearance of your teeth"
             class="w-full h-full object-cover hover:scale-105 transition duration-300"
             width="250"
@@ -706,7 +744,7 @@
       <div class="service-card service-extra hidden rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
         <div class="service-photo-frame w-full overflow-hidden" style="background-color: #e8ddd5;">
           <img
-            src="./assets/WisdomTeethRemovalLg.webp"
+            src="./assets/Wisdom-tooth-extraction.webp"
             alt="Wisdom Tooth Removal - Safe and painless extraction with expert surgical care"
             class="w-full h-full object-cover hover:scale-105 transition duration-300"
             width="250"
@@ -746,7 +784,7 @@
       <div class="service-card service-extra hidden rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition hover:-translate-y-2" style="background-color: #ffffff;">
         <div class="service-photo-frame w-full overflow-hidden" style="background-color: #e8ddd5;">
           <img
-            src="./assets/TeethWhiteningLg.webp"
+            src="./assets/Teeth-whitening.webp"
             alt="Teeth Whitening - Professional teeth whitening treatments"
             class="w-full h-full object-cover hover:scale-105 transition duration-300"
             width="250"
